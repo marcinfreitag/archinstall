@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# install-packages.sh - install software from repos
+#
+
+echo ":: Update system packages"
+sudo yay -Syu --noconfirm
+
+echo ":: Install packages for DWM"
+sudo yay -Syu --noconfirm base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
+
+echo ":: Install CLI apps"
+sudo yay -Syu --noconfirm neovim
+
