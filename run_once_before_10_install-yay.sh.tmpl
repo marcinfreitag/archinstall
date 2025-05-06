@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#
+# install-yay.sh - install yay AUR helper
+#
+
+echo ":: Installing yay"
+mkdir -p ~/.local/src
+pushd ~/.local/src
+sudo pacman -Sy --noconfirm --needed base-devel git
+git clone https://aur.archlinux.org/yay.git
+pushd yay
+makepkg -si --noconfirm
+popd
+popd
+
