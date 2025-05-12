@@ -9,10 +9,10 @@ Check out the [Quick Start](https://www.chezmoi.io/quick-start/) page.
 
 ### Install chezmoi and the dotfiles on any new machine
 
-With a single command (public):
+With a single line of code (public):
 
 ```sh
-sudo pacman -Sy --noconfirm chezmoi && chezmoi init https://github.com/marcinfreitag/archinstall.git apply
+sudo pacman -Sy --noconfirm chezmoi && chezmoi init https://github.com/marcinfreitag/archinstall.git && chezmoi apply
 ```
 
 ### Update
