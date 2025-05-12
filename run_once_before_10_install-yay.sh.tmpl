@@ -4,8 +4,9 @@
 #
 
 echo ":: Installing yay"
-mkdir -p ~/.local/src
-pushd ~/.local/src
+yayCacheDir="~/.cache/yay"
+mkdir -p $yayCacheDir
+pushd $yayCacheDir
 sudo pacman -Sy --noconfirm --needed base-devel git
 git clone https://aur.archlinux.org/yay.git
 pushd yay

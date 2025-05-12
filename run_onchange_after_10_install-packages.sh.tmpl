@@ -6,19 +6,42 @@
 echo ":: Update system packages"
 yay -Syu --noconfirm
 
-echo ":: Install xserver (intel)"
-yay -Syu --noconfirm xf86-video-intel xorg-server xorg-xinit xorg-xsetroot 
+echo ":: Install base packages"
+yay -S --noconfirm base-devel chezmoi git
 
-echo ":: Install packages for DWM"
-yay -Syu --noconfirm base-devel git
+echo ":: Install suckless dependencies"
+yay -S base-devel git libx11 libxft libxinerama xorg-server xorg-xinit terminus-font
+
+echo ":: Install install intel driver and xorg tools"
+yay -S --noconfirm xf86-video-intel xorg-xsetroot 
+
+echo ":: Build and install suckless binaries"
+mkdir -p ~/.local/src
+
+git clone git://git.suckless.org/st ~/.local/src/st
+git clone git://git.suckless.org/dmenu ~/.local/src/dmenu
+git clone git://git.suckless.org/dwm ~/.local/src/dwm
+
+pushd ~/.local/src/st
+make clean && sudo make install
+popd
+
+pushd ~/.local/src/dmenu
+make clean && sudo make install
+popd
+
+pushd ~/.local/src/dwm
+make clean && sudo make install
+popd
+
 # st's dependencies
-yay -Syu --noconfirm fontconfig freetype2 graphite harfbuzz libxrender libxft
+#yay -Sy --noconfirm fontconfig freetype2 graphite harfbuzz libxrender libxft
 
 # dwm's dependencies
-yay -Syu libxinerama
+#yay -S libxinerama
 
-#yay -Syu --noconfirm  libx11 webkit2gtk
+#yay -S --noconfirm  libx11 webkit2gtk
 
 echo ":: Install CLI apps"
-yay -Syu --noconfirm less man-db neovim
+yay -S --noconfirm less man-db neovim
 
