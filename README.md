@@ -12,7 +12,7 @@ Check out the [Quick Start](https://www.chezmoi.io/quick-start/) page.
 With a single command (public):
 
 ```sh
-sudo pacman -Sy --noconfirm chezmoi && chezmoi init https://github.com/marcinfreitag/archinstall.git
+sudo pacman -Sy --noconfirm chezmoi && chezmoi init https://github.com/marcinfreitag/archinstall.git apply
 ```
 
 ### Update
