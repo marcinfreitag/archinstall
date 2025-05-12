@@ -6,6 +6,9 @@
 echo ":: Update system packages"
 yay -Syu --noconfirm
 
+echo ":: Install xserver (intel)"
+yay -Syu --noconfirm xf86-video-intel xorg-server xorg-xinit xorg-xsetroot 
+
 echo ":: Install packages for DWM"
 yay -Syu --noconfirm base-devel git
 # st's dependencies
@@ -14,7 +17,7 @@ yay -Syu --noconfirm fontconfig freetype2 graphite harfbuzz libxrender libxft
 # dwm's dependencies
 yay -Syu libxinerama
 
-#yay -Syu --noconfirm  xorg-server xorg-xinit libx11 webkit2gtk
+#yay -Syu --noconfirm  libx11 webkit2gtk
 
 echo ":: Install CLI apps"
 yay -Syu --noconfirm less man-db neovim
