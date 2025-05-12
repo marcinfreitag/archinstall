@@ -7,13 +7,13 @@ echo ":: Update system packages"
 yay -Syu --noconfirm
 
 echo ":: Install base packages"
-yay -S --noconfirm base-devel chezmoi git
+yay -Sy --noconfirm base-devel chezmoi git
+
+echo ":: Install xorg-server"
+yay -Sy --noconfirm xf86-video-intel xorg-xsetroot xorg-server xorg-xinit terminus-font
 
 echo ":: Install suckless dependencies"
-yay -S base-devel git libx11 libxft libxinerama xorg-server xorg-xinit terminus-font
-
-echo ":: Install install intel driver and xorg tools"
-yay -S --noconfirm xf86-video-intel xorg-xsetroot 
+yay -Sy base-devel git fontconfig freetype2 libx11 libxft libxineramaecho ":: Install install intel driver and xorg tools"
 
 echo ":: Build and install suckless binaries"
 mkdir -p ~/.local/src
@@ -43,5 +43,5 @@ popd
 #yay -S --noconfirm  libx11 webkit2gtk
 
 echo ":: Install CLI apps"
-yay -S --noconfirm less man-db neovim
+yay -Sy --noconfirm htop less man-db neovim
 
