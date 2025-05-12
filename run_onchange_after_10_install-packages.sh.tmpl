@@ -11,8 +11,11 @@ yay -Syu --noconfirm base-devel git
 # st's dependencies
 yay -Syu --noconfirm fontconfig freetype2 graphite harfbuzz libxrender libxft
 
-#yay -Syu --noconfirm base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
+# dwm's dependencies
+yay -Syu libxinerama
+
+#yay -Syu --noconfirm  xorg-server xorg-xinit libx11 webkit2gtk
 
 echo ":: Install CLI apps"
-yay -Syu --noconfirm less neovim
+yay -Syu --noconfirm less man-db neovim
 
